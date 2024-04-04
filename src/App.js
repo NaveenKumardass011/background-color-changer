@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [colur,setcolur]=useState("aqua")
+  function colurCanger(e){
+ const bgcolur=e.target.innerText.toLowerCase()
+ setcolur(bgcolur)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    < >
+     <h1>Background Colur Changer</h1>
+     <div className='container' style={{backgroundColor:colur}}>
+      <ul className='colur-list'>
+        <li onClick={colurCanger}>Green</li>
+        <li onClick={colurCanger}>Yellow</li>
+        <li onClick={colurCanger}>Blue</li>
+        <li onClick={colurCanger}>Pink</li>
+        <li onClick={colurCanger}>Black</li>
+        <li onClick={colurCanger}>Orange</li>
+      </ul>
+      
+     </div>
+    </>
   );
 }
 
